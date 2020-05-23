@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: KNOWLEDGE
   m_EditorClassIdentifier: 
   word: KNOWLEDGE
-  description: Facts, information, and skills acquired through experience or education.
+  description: information, and skills acquired through experience or education
   wordArtwork: {fileID: 0}

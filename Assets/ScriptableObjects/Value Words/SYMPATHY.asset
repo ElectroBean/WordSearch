@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SYMPATHY
   m_EditorClassIdentifier: 
   word: SYMPATHY
-  description: Feelings of pity or sorry for someone else's misfortune
+  description: Feeling pity or sorry for someone else's misfortune
   wordArtwork: {fileID: 0}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Resilience
   m_EditorClassIdentifier: 
   word: RESILIENCE
-  description: The capacity to recover quickly from difficulties or thoughness.
+  description: The capacity to recover quickly from difficulties or toughness.
   wordArtwork: {fileID: 0}

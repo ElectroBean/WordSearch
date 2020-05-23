@@ -126,7 +126,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -603,6 +602,18 @@ PrefabInstance:
       propertyPath: m_textInfo.lineCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 59367266, guid: 19b17dc49842b4e48bbc29c367fa21db, type: 3}
+      propertyPath: m_text
+      value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 59367266, guid: 19b17dc49842b4e48bbc29c367fa21db, type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 59367266, guid: 19b17dc49842b4e48bbc29c367fa21db, type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 112447614, guid: 19b17dc49842b4e48bbc29c367fa21db, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -666,11 +677,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 1360193884, guid: 19b17dc49842b4e48bbc29c367fa21db, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChooseDifficulty
+      value: LoadMenu
       objectReference: {fileID: 0}
     - target: {fileID: 1360193884, guid: 19b17dc49842b4e48bbc29c367fa21db, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1360193884, guid: 19b17dc49842b4e48bbc29c367fa21db, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

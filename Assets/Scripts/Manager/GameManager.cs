@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public Difficulty currentDifficulty;
-    public enum Difficulty {
+    public enum Difficulty
+    {
         easy, medium, hard
     }
 
@@ -15,14 +16,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this);
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
+        instance = this;
     }
 
     // Update is called once per frame
@@ -44,5 +38,10 @@ public class GameManager : MonoBehaviour
     public void ResetWordSearch()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }

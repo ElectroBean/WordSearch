@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Responsibility
   m_EditorClassIdentifier: 
   word: RESPONSIBILITY
-  description: The opportunity or ability to act independently and take decisions
+  description: The opportunity or ability to act independently and make decisions
     without authorization.
   wordArtwork: {fileID: 0}
