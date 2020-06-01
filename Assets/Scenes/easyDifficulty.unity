@@ -128,6 +128,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1252196882142860869, guid: 4702479454f73924b81da6b316f9a73b,
+        type: 3}
+      propertyPath: m_margin.y
+      value: -213.01488
+      objectReference: {fileID: 0}
     - target: {fileID: 1252196882170855848, guid: 4702479454f73924b81da6b316f9a73b,
         type: 3}
       propertyPath: m_LocalPosition.x

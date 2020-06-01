@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: a4bc9f5c16c3512428bf4e2f14a9b02e
+    path: Assets/Scenes/hardDifficulty.unity
+    guid: e0a95674e5350544dbd20c015f65c048
   - enabled: 1
     path: Assets/Scenes/easyDifficulty.unity
     guid: 8d714c4287efbd8428c85f4e0b6383a9
@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/mediumDifficulty.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/hardDifficulty.unity
-    guid: e0a95674e5350544dbd20c015f65c048
+    path: Assets/Scenes/Menu.unity
+    guid: a4bc9f5c16c3512428bf4e2f14a9b02e
   m_configObjects: {}
