@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Data.Common;
+using System.Management.Instrumentation;
+using TMPro;
+using UnityEngine;
+using UnityScript.Steps;
 
 public class WordSearchGrid1 : MonoBehaviour
 {
@@ -31,6 +31,8 @@ public class WordSearchGrid1 : MonoBehaviour
     public Vector2 randomPos;
 
     int numberOfCells = 0;
+
+    public List<string> bannedWords;
 
     public class GridPosition
     {
@@ -130,6 +132,8 @@ public class WordSearchGrid1 : MonoBehaviour
             }
         }
 
+        LoadBannedWords();
+
         InitializeGrid();
         //PlaceWords();
         if (PlaceWords2())
@@ -141,8 +145,8 @@ public class WordSearchGrid1 : MonoBehaviour
             Debug.Log("BIG NOPE");
         }
         PlaceLetters();
-
         //UpdateWordsText();
+        ProfanityFilter();
 
     }
 
@@ -282,7 +286,7 @@ public class WordSearchGrid1 : MonoBehaviour
 
         foreach(ValueWord vw in valueWordsPlaced)
         {
-            wordsText.text += vw.word + ", ";
+            wordsText.text += vw.word + "\n";
         }
         wordsInSearch = valueWordsPlaced;
         return true;
@@ -1026,10 +1030,75 @@ public class WordSearchGrid1 : MonoBehaviour
         {
             if (foundWords.Contains(vw))
             {
-                wordsText.text += "<s>" + vw.word + "</s>" + ", ";
+                wordsText.text += "<s>" + vw.word + "</s>" + "\n ";
             }
             else
-                wordsText.text += vw.word + ", ";
+                wordsText.text += vw.word + "\n ";
         }
+    }
+
+    void ProfanityFilter()
+    {
+        foreach(var word in bannedWords)
+        {
+            for(int i = 0; i < rows; i++)
+            {
+                for(int j = 0; j < columns; j++)
+                {
+                    CheckForWord(new Vector2(j, i), word, new Vector2(1, 0));
+                    CheckForWord(new Vector2(j, i), word, new Vector2(-1, 0));
+                    CheckForWord(new Vector2(j, i), word, new Vector2(0, 1));
+                    CheckForWord(new Vector2(j, i), word, new Vector2(0, -1));
+                }
+            }
+        }
+    }
+
+    bool CheckForWord(Vector2 position, string word, Vector2 direction)
+    {
+        int index = 0;
+        for(int i = 0; i < word.Length; i++)
+        {
+            Vector2 newPos = new Vector2((int)(position.x + direction.x * i), (int)(position.y + direction.y * i));
+            if (!isInBounds(newPos))
+            {
+                return false;
+            }
+            if(gridPositions[(int)newPos.y][(int)newPos.x].text.text == word[i].ToString())
+            {
+                index++;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        for (int i = 0; i < word.Length; i++)
+        {
+            Vector2 newPos = new Vector2((int)(position.x + direction.x * i), (int)(position.y + direction.y * i));
+            gridPositions[(int)newPos.y][(int)newPos.x].text.text = alpha[Random.Range(0, alpha.Length)].ToString();
+        }
+
+        Debug.Log("found banned word");
+        return true;
+    }
+
+    bool isInBounds(Vector2 position)
+    {
+        if(position.x >= columns || position.y >= rows || position.x < 0 || position.y < 0)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    void LoadBannedWords()
+    {
+        string text = File.ReadAllText("Assets/Resources/bannedwords.txt");
+        char[] separators = { ',' };
+        string[] strValues = text.Split(separators);
+        bannedWords = strValues.ToList();
     }
 }

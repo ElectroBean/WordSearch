@@ -65,11 +65,11 @@ public class WorldSpaceInputManager : MonoBehaviour
             }
             else
             {
-                //reverse string
-                char[] charArray = selected.ToCharArray();
-                System.Array.Reverse(charArray);
-                selected = new string(charArray);
-                SearchForWord();
+                ////reverse string
+                //char[] charArray = selected.ToCharArray();
+                //System.Array.Reverse(charArray);
+                //selected = new string(charArray);
+                //SearchForWord();
             }
 
             selected = "";
