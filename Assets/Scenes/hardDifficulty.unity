@@ -210,7 +210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1252196882369843198}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.251183, y: -61.291603, z: 616.44763}
+  m_LocalPosition: {x: -16.251183, y: -61.291603, z: -100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6573430339155022222}
@@ -405,7 +405,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1252196882912505115}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.251183, y: -61.291603, z: 617.44763}
+  m_LocalPosition: {x: -16.251183, y: -61.291603, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6573430339155022222}
@@ -624,6 +624,16 @@ MonoBehaviour:
   randomPos: {x: 0, y: 0}
   allBannedWords: shit,fuck,crap
   bannedWords: []
+  prefabs:
+  - {fileID: 848515768231967262, guid: bbc9a41e66b03394998e71ec94b0d196, type: 3}
+  - {fileID: 6744281762499836236, guid: 78a5184e633ae1044a7bd1b211a5d4e2, type: 3}
+  - {fileID: 1552809190722631884, guid: 90f3d6a0f70de2c4aabfc9fdaf922eba, type: 3}
+  - {fileID: 4662835438217202027, guid: 819af77f766c76a44bbadbda61d727ad, type: 3}
+  - {fileID: 1331986994707168873, guid: 137e608c687dd524cae966adc5615886, type: 3}
+  - {fileID: 4964368134529864540, guid: a7b9ca64552029d4bbbc2683d524ba01, type: 3}
+  - {fileID: 6698352510704154662, guid: f5517374bd22ce74a9fcb97908cf6093, type: 3}
+  - {fileID: 6631139406945985926, guid: a325a7b9b90105c408d336c522862d5e, type: 3}
+  - {fileID: 8657355151996823914, guid: ed46441bb955b8a49935757ed5286a6f, type: 3}
 --- !u!1 &1252196882976570950
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,7 +692,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1252196883039290707}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 220.91452, y: 166.61493, z: 536.82263}
+  m_LocalPosition: {x: 220.91452, y: 166.61493, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6573430339155022222}
@@ -2246,7 +2256,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3957592661933577748}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.251183, y: 61.291603, z: -617.44763}
+  m_LocalPosition: {x: 16.251183, y: 61.291603, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1252196882369842946}

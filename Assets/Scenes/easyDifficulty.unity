@@ -406,6 +406,16 @@ MonoBehaviour:
   randomPos: {x: 0, y: 0}
   allBannedWords: shit,fuck,crap
   bannedWords: []
+  prefabs:
+  - {fileID: 848515768231967262, guid: bbc9a41e66b03394998e71ec94b0d196, type: 3}
+  - {fileID: 6744281762499836236, guid: 78a5184e633ae1044a7bd1b211a5d4e2, type: 3}
+  - {fileID: 1552809190722631884, guid: 90f3d6a0f70de2c4aabfc9fdaf922eba, type: 3}
+  - {fileID: 4662835438217202027, guid: 819af77f766c76a44bbadbda61d727ad, type: 3}
+  - {fileID: 1331986994707168873, guid: 137e608c687dd524cae966adc5615886, type: 3}
+  - {fileID: 4964368134529864540, guid: a7b9ca64552029d4bbbc2683d524ba01, type: 3}
+  - {fileID: 6698352510704154662, guid: f5517374bd22ce74a9fcb97908cf6093, type: 3}
+  - {fileID: 6631139406945985926, guid: a325a7b9b90105c408d336c522862d5e, type: 3}
+  - {fileID: 8657355151996823914, guid: ed46441bb955b8a49935757ed5286a6f, type: 3}
 --- !u!1 &1252196882022238034
 GameObject:
   m_ObjectHideFlags: 0

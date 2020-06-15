@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data.Common;
 using System.IO;
 using System.Linq;
 using TMPro;
@@ -34,6 +35,8 @@ public class WordSearchGrid1 : MonoBehaviour
     public string allBannedWords;
     public List<string> bannedWords;
 
+    public GameObject[] prefabs;
+
     public class GridPosition
     {
         public int x;
@@ -52,7 +55,7 @@ public class WordSearchGrid1 : MonoBehaviour
         public void AddColor(Color color)
         {
             //instantiate overlay image and set its colour
-            GameObject go = Instantiate(WordSearchGrid1.instance.overlayImage, position, Quaternion.identity);
+            GameObject go = Instantiate(WordSearchGrid1.instance.overlayImage, position + new Vector3(0, 0, -1), Quaternion.identity);
             go.transform.localScale = (Vector3.one * WordSearchGrid1.instance.cellSizeX / 2) * go.gameObject.transform.localScale.magnitude;
             Color newCol = currentColor;
             newCol.a = 0.75f;
@@ -928,8 +931,53 @@ public class WordSearchGrid1 : MonoBehaviour
             {
                 for (int j = 0; j < columns; j++)
                 {
+                    GameObject prefab = prefabs[8];
+                    Vector2 pos = new Vector2(j, i);
+
+                    //check if point is on left
+                    if(pos.x == 0)
+                    {
+                        prefab = prefabs[7];
+                    }
+                    //check if point is on right
+                    if (pos.x == columns - 1)
+                    {
+                        prefab = prefabs[5];
+                    }
+                    //check if point is on top
+                    if (pos.y == rows - 1)
+                    {
+                        prefab = prefabs[4];
+                    }
+                    //check if point is on bottom
+                    if (pos.y == 0)
+                    {
+                        prefab = prefabs[6];
+                    }
+
+                    //check if point is the first in row
+                    if (pos == new Vector2(0, 0))
+                    {
+                        prefab = prefabs[2];
+                    }
+                    //check if point is last in first row
+                    if(pos == new Vector2(columns - 1, 0))
+                    {
+                        prefab = prefabs[3];
+                    }
+                    //check if point is first in last row
+                    if(pos == new Vector2(0, rows - 1))
+                    {
+                        prefab = prefabs[0];
+                    }
+                    //check if point is last in last row
+                    if(pos == new Vector2(columns - 1, rows - 1))
+                    {
+                        prefab = prefabs[1];
+                    }
+
                     Vector3 drawPos = position + new Vector3(cellSizeX * j, cellSizeX * i, 0);
-                    SpriteRenderer go = Instantiate(gridPlacePrefab, drawPos, Quaternion.identity/*, gridBackGroundParent*/).GetComponent<SpriteRenderer>();
+                    SpriteRenderer go = Instantiate(gridPlacePrefab/*prefab*/, drawPos, Quaternion.identity/*, gridBackGroundParent*/).GetComponent<SpriteRenderer>();
                     go.transform.SetParent(gridBackGroundParent, true);
                     go.gameObject.transform.localScale = (Vector3.one * WordSearchGrid1.instance.cellSizeX / 2) * go.gameObject.transform.localScale.magnitude;
                     TextMeshPro tmp = go.gameObject.GetComponentInChildren<TextMeshPro>();
@@ -1078,7 +1126,7 @@ public class WordSearchGrid1 : MonoBehaviour
         for (int i = 0; i < word.Length; i++)
         {
             Vector2 newPos = new Vector2((int)(position.x + direction.x * i), (int)(position.y + direction.y * i));
-            if (gridPositions[(int)newPos.y][(int)newPos.x].valueWord != null)
+            if (gridPositions[(int)newPos.y][(int)newPos.x].valueWord == null || gridPositions[(int)newPos.y][(int)newPos.x].found == false)
                 gridPositions[(int)newPos.y][(int)newPos.x].text.text = alpha[Random.Range(0, alpha.Length)].ToString();
         }
 
